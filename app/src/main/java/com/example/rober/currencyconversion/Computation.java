@@ -51,15 +51,20 @@ public class Computation {
      * @return the exchange rate.
      */
     public double getRate(final String abbrev) {
-        return rate.get(abbrev);
+        return bcrate.get(abbrev);
     }
-
+    /** Setting the base case of the currency conversion rate(default euro(EUR)).
+     * @param abbrev  desired base case currency abbreviation as in 3 letters.
+     */
     public void setBaseCase(final String abbrev) {
         basecase = abbrev;
         if (abbrev == "EUR") {
             bcrate = rate;
         } else {
-            for (rate.Entry<String, String> entry : rate.entrySet())
+            double val = rate.get(abbrev);
+            for (String cur : rate.keySet()) {
+                bcrate.replace(cur, rate.get(cur) / val);
+            }
         }
     }
 }
