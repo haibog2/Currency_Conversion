@@ -22,16 +22,17 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/startAPICall"
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/start_api_call" />
+            android:text="Button" />
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp">
+
 
             <TextView
                 android:id="@+id/jsonResult"
@@ -41,6 +42,8 @@
                 android:layout_gravity="start"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/black" />
+
         </ScrollView>
+
     </LinearLayout>
 </FrameLayout>
